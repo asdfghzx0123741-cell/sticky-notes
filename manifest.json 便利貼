@@ -1,0 +1,21 @@
+{
+  "name": "便利貼",
+  "short_name": "便利貼",
+  "description": "簡單好用的便利貼",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#E7DFC9",
+  "theme_color": "#A8562F",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
