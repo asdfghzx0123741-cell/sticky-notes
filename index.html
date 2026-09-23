@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>便利貼</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuS+v+WIqeiyvCIsICJzaG9ydF9uYW1lIjogIuS+v+WIqeiyvCIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjRTdERkM5IiwgInRoZW1lX2NvbG9yIjogIiNBODU2MkYiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhacFpYZENiM2c5SWpBZ01DQXhPVElnTVRreUlqNEtQSEpsWTNRZ2QybGtkR2c5SWpFNU1pSWdhR1ZwWjJoMFBTSXhPVElpSUhKNFBTSXpOQ0lnWm1sc2JEMGlJMEU0TlRZeVJpSXZQZ284Y0dGMGFDQmtQU0pOTXpRZ016QWdTREUxT0NCV01UVTRJRXd4TVRnZ01UVTRJRXd6TkNBeE5UZ2dXaUlnWm1sc2JEMGlJMFl6UTBVMk9DSXZQZ284Y0dGMGFDQmtQU0pOTVRFNElERXhPQ0JNTVRVNElERXhPQ0JNTVRVNElERTFPQ0JhSWlCbWFXeHNQU0lqUkRsQlJEUkRJaTgrQ2p4d1lYUm9JR1E5SWsweE1UZ2dNVEU0SUV3eE1UZ2dNVFU0SUV3eE5UZ2dNVFU0SUZvaUlHWnBiR3c5SWlORlFVTXdOallpTHo0S1BHeHBibVVnZURFOUlqVXlJaUI1TVQwaU5qWWlJSGd5UFNJeE5EQWlJSGt5UFNJMk5pSWdjM1J5YjJ0bFBTSWpOMEUxUWpJeUlpQnpkSEp2YTJVdGQybGtkR2c5SWpjaUlITjBjbTlyWlMxc2FXNWxZMkZ3UFNKeWIzVnVaQ0l2UGdvOGJHbHVaU0I0TVQwaU5USWlJSGt4UFNJNE9DSWdlREk5SWpFeU9DSWdlVEk5SWpnNElpQnpkSEp2YTJVOUlpTTNRVFZDTWpJaUlITjBjbTlyWlMxM2FXUjBhRDBpTnlJZ2MzUnliMnRsTFd4cGJtVmpZWEE5SW5KdmRXNWtJaTgrQ2p4c2FXNWxJSGd4UFNJMU1pSWdlVEU5SWpFeE1DSWdlREk5SWpFd01DSWdlVEk5SWpFeE1DSWdjM1J5YjJ0bFBTSWpOMEUxUWpJeUlpQnpkSEp2YTJVdGQybGtkR2c5SWpjaUlITjBjbTlyWlMxc2FXNWxZMkZ3UFNKeWIzVnVaQ0l2UGdvOEwzTjJaejQ9IiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIn0sIHsic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJajRLUEhKbFkzUWdkMmxrZEdnOUlqRTVNaUlnYUdWcFoyaDBQU0l4T1RJaUlISjRQU0l6TkNJZ1ptbHNiRDBpSTBFNE5UWXlSaUl2UGdvOGNHRjBhQ0JrUFNKTk16UWdNekFnU0RFMU9DQldNVFU0SUV3eE1UZ2dNVFU0SUV3ek5DQXhOVGdnV2lJZ1ptbHNiRDBpSTBZelEwVTJPQ0l2UGdvOGNHRjBhQ0JrUFNKTk1URTRJREV4T0NCTU1UVTRJREV4T0NCTU1UVTRJREUxT0NCYUlpQm1hV3hzUFNJalJEbEJSRFJESWk4K0NqeHdZWFJvSUdROUlrMHhNVGdnTVRFNElFd3hNVGdnTVRVNElFd3hOVGdnTVRVNElGb2lJR1pwYkd3OUlpTkZRVU13TmpZaUx6NEtQR3hwYm1VZ2VERTlJalV5SWlCNU1UMGlOallpSUhneVBTSXhOREFpSUhreVBTSTJOaUlnYzNSeWIydGxQU0lqTjBFMVFqSXlJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqY2lJSE4wY205clpTMXNhVzVsWTJGd1BTSnliM1Z1WkNJdlBnbzhiR2x1WlNCNE1UMGlOVElpSUhreFBTSTRPQ0lnZURJOUlqRXlPQ0lnZVRJOUlqZzRJaUJ6ZEhKdmEyVTlJaU0zUVRWQ01qSWlJSE4wY205clpTMTNhV1IwYUQwaU55SWdjM1J5YjJ0bExXeHBibVZqWVhBOUluSnZkVzVrSWk4K0NqeHNhVzVsSUhneFBTSTFNaUlnZVRFOUlqRXhNQ0lnZURJOUlqRXdNQ0lnZVRJOUlqRXhNQ0lnYzNSeWIydGxQU0lqTjBFMVFqSXlJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqY2lJSE4wY205clpTMXNhVzVsWTJGd1BTSnliM1Z1WkNJdlBnbzhMM04yWno0PSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSIzNCIgZmlsbD0iI0E4NTYyRiIvPgo8cGF0aCBkPSJNMzQgMzAgSDE1OCBWMTU4IEwxMTggMTU4IEwzNCAxNTggWiIgZmlsbD0iI0YzQ0U2OCIvPgo8cGF0aCBkPSJNMTE4IDExOCBMMTU4IDExOCBMMTU4IDE1OCBaIiBmaWxsPSIjRDlBRDRDIi8+CjxwYXRoIGQ9Ik0xMTggMTE4IEwxMTggMTU4IEwxNTggMTU4IFoiIGZpbGw9IiNFQUMwNjYiLz4KPGxpbmUgeDE9IjUyIiB5MT0iNjYiIHgyPSIxNDAiIHkyPSI2NiIgc3Ryb2tlPSIjN0E1QjIyIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8bGluZSB4MT0iNTIiIHkxPSI4OCIgeDI9IjEyOCIgeTI9Ijg4IiBzdHJva2U9IiM3QTVCMjIiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxsaW5lIHgxPSI1MiIgeTE9IjExMCIgeDI9IjEwMCIgeTI9IjExMCIgc3Ryb2tlPSIjN0E1QjIyIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSIzNCIgZmlsbD0iI0E4NTYyRiIvPgo8cGF0aCBkPSJNMzQgMzAgSDE1OCBWMTU4IEwxMTggMTU4IEwzNCAxNTggWiIgZmlsbD0iI0YzQ0U2OCIvPgo8cGF0aCBkPSJNMTE4IDExOCBMMTU4IDExOCBMMTU4IDE1OCBaIiBmaWxsPSIjRDlBRDRDIi8+CjxwYXRoIGQ9Ik0xMTggMTE4IEwxMTggMTU4IEwxNTggMTU4IFoiIGZpbGw9IiNFQUMwNjYiLz4KPGxpbmUgeDE9IjUyIiB5MT0iNjYiIHgyPSIxNDAiIHkyPSI2NiIgc3Ryb2tlPSIjN0E1QjIyIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8bGluZSB4MT0iNTIiIHkxPSI4OCIgeDI9IjEyOCIgeTI9Ijg4IiBzdHJva2U9IiM3QTVCMjIiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxsaW5lIHgxPSI1MiIgeTE9IjExMCIgeDI9IjEwMCIgeTI9IjExMCIgc3Ryb2tlPSIjN0E1QjIyIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="便利貼">
+<meta name="theme-color" content="#A8562F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E7DFC9;
+    --bg-texture: #DCD3B8;
+    --surface: #FBF7EE;
+    --ink: #3A3226;
+    --ink-soft: #6B6252;
+    --line: #C9BE9E;
+    --accent: #A8562F;
+    --shadow: rgba(58, 50, 38, 0.22);
+
+    --c1: #F3CE68;
+    --c2: #F0AEBB;
+    --c3: #A9D7B7;
+    --c4: #9EC9E3;
+    --c5: #CBB6E0;
+
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+  }
+
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #211C15;
+      --bg-texture: #2A241B;
+      --surface: #2F291F;
+      --ink: #EFE7D6;
+      --ink-soft: #B8AC94;
+      --line: #46402F;
+      --accent: #E0965F;
+      --shadow: rgba(0, 0, 0, 0.5);
+
+      --c1: #8A6E2E;
+      --c2: #8A4E5C;
+      --c3: #3E6A4E;
+      --c4: #395E78;
+      --c5: #5B4A78;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #211C15;
+    --bg-texture: #2A241B;
+    --surface: #2F291F;
+    --ink: #EFE7D6;
+    --ink-soft: #B8AC94;
+    --line: #46402F;
+    --accent: #E0965F;
+    --shadow: rgba(0, 0, 0, 0.5);
+
+    --c1: #8A6E2E;
+    --c2: #8A4E5C;
+    --c3: #3E6A4E;
+    --c4: #395E78;
+    --c5: #5B4A78;
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    background:
+      radial-gradient(circle at 15% 25%, var(--bg-texture) 0, transparent 45%),
+      radial-gradient(circle at 85% 70%, var(--bg-texture) 0, transparent 40%),
+      var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+  }
+
+  header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 20px 14px;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  .new-btn {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--accent);
+    color: var(--surface);
+    border: none;
+    border-radius: 3px;
+    padding: 9px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 2px 0 var(--shadow);
+  }
+  .new-btn:hover { transform: translateY(-1px); box-shadow: 0 3px 0 var(--shadow); }
+  .new-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--shadow); }
+
+  .strip {
+    max-width: 1100px;
+    margin: 12px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 0;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 6px 5px 12px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    max-width: 220px;
+    background: var(--surface);
+  }
+  .tab .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    flex: none;
+  }
+  .tab .label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tab .expand-x {
+    flex: none;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft);
+    font-size: 13px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .tab .expand-x:hover { background: var(--line); }
+
+  main#board {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 26px;
+  }
+
+  .empty {
+    font-family: 'Kalam', cursive;
+    font-size: 18px;
+    color: var(--ink-soft);
+    padding: 40px 8px;
+  }
+
+  .note {
+    width: 230px;
+    min-height: 200px;
+    background: var(--c1);
+    border-radius: 2px 2px 6px 6px;
+    box-shadow: 0 6px 14px var(--shadow), 0 1px 0 rgba(255,255,255,0.15) inset;
+    padding: 14px 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .note::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 2px 3px var(--shadow);
+  }
+
+  .note-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+  .note-top-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .icon-btn {
+    border: none;
+    background: rgba(0,0,0,0.08);
+    color: var(--ink);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-btn:hover { background: rgba(0,0,0,0.16); }
+
+  .note-image {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px var(--shadow);
+    flex: none;
+  }
+  .note-image img {
+    display: block;
+    width: 100%;
+    max-height: 140px;
+    object-fit: cover;
+  }
+  .note-image .remove-image {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .note-image .remove-image:hover { background: rgba(0,0,0,0.75); }
+
+  .note-text {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'Kalam', cursive;
+    color: var(--ink);
+    line-height: 1.35;
+    outline: none;
+    min-height: 90px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .note-text[data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: rgba(58,50,38,0.4);
+  }
+
+  .caret-joystick {
+    flex: none;
+    width: 54px;
+    height: 22px;
+    border-radius: 11px;
+    background: rgba(0,0,0,0.1);
+    position: relative;
+    touch-action: none;
+    cursor: pointer;
+  }
+  .caret-joystick .knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 1px 3px var(--shadow);
+  }
+  .caret-joystick::before,
+  .caret-joystick::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid var(--ink-soft);
+    transform: translateY(-50%) rotate(-45deg);
+    opacity: 0.6;
+  }
+  .caret-joystick::before { left: 5px; border-right: 2px solid var(--ink-soft); border-top: none; }
+  .caret-joystick::after { right: 5px; transform: translateY(-50%) rotate(45deg); border-left: 2px solid var(--ink-soft); border-top: none; }
+
+  .note-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed rgba(58,50,38,0.25);
+  }
+
+  .size-select {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.35);
+    border: 1px solid rgba(58,50,38,0.25);
+    border-radius: 3px;
+    padding: 3px 4px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .swatches {
+    display: flex;
+    gap: 5px;
+  }
+  .swatch {
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.6);
+    cursor: pointer;
+    padding: 0;
+  }
+  .swatch.active {
+    outline: 2px solid var(--ink);
+    outline-offset: 1px;
+  }
+
+  .selection-toolbar {
+    position: fixed;
+    left: 50%;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+    box-shadow: 0 6px 18px var(--shadow);
+    z-index: 80;
+  }
+  .selection-toolbar.visible { display: flex; }
+  .selection-toolbar .tcolor {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.7);
+    cursor: pointer; padding: 0;
+  }
+  .selection-toolbar .divider { width: 1px; height: 20px; background: var(--line); }
+  .selection-toolbar .bold-btn, .selection-toolbar .reset-btn {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px; font-weight: 700;
+    border: none; background: transparent; color: var(--ink);
+    width: 30px; height: 30px; border-radius: 50%;
+    cursor: pointer;
+  }
+  .selection-toolbar .bold-btn.active { background: var(--accent); color: var(--surface); }
+  .selection-toolbar .bold-btn:hover, .selection-toolbar .reset-btn:hover { background: var(--line); }
+
+  @media (max-width: 480px) {
+    .note { width: 100%; max-width: 320px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <h1>便利貼</h1>
+    <button class="new-btn" id="newBtn">+ 新增便利貼</button>
+  </div>
+  <div class="strip" id="strip"></div>
+</header>
+
+<main id="board"></main>
+<input type="file" id="imageInput" accept="image/*" style="display:none">
+
+<div class="selection-toolbar" id="selectionToolbar">
+  <button class="tcolor" data-color="#C0392B" style="background:#C0392B" title="紅"></button>
+  <button class="tcolor" data-color="#1E8449" style="background:#1E8449" title="綠"></button>
+  <button class="tcolor" data-color="#2E5FA3" style="background:#2E5FA3" title="藍"></button>
+  <button class="tcolor" data-color="#7D3C98" style="background:#7D3C98" title="紫"></button>
+  <button class="tcolor" data-color="#B36B00" style="background:#B36B00" title="橘"></button>
+  <div class="divider"></div>
+  <button class="bold-btn" id="boldBtn" title="粗體切換">B</button>
+  <button class="reset-btn" id="resetBtn" title="清除格式">⌫</button>
+</div>
+
+<script>
+(function () {
+  const STORAGE_KEY = 'sticky-notes-v2';
+  const COLORS = ['c1', 'c2', 'c3', 'c4', 'c5'];
+  const SIZES = { S: '14px', M: '17px', L: '21px', XL: '26px' };
+  const MAX_DIM = 640;
+  const CARET_HALF = 16; // (track width - knob width) / 2
+  const CARET_REPEAT_MS = 90;
+
+  let notes = [];
+  let pendingImageTargetId = null;
+
+  function id() {
+    return 'n' + Math.random().toString(36).slice(2, 10);
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML.replace(/\n/g, '<br>');
+  }
+
+  function plainTextOf(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html || '';
+    return tmp.textContent || '';
+  }
+
+  function loadNotes() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        notes = JSON.parse(raw);
+      }
+    } catch (e) { /* storage unavailable, fall through to seed notes */ }
+
+    if (!notes || notes.length === 0) {
+      notes = [
+        { id: id(), html: '在這裡打字…', color: 'c1', size: 'M', collapsed: false, image: null },
+        { id: id(), html: '選字改顏色、調粗體；用左右搖桿移動游標', color: 'c3', size: 'M', collapsed: false, image: null }
+      ];
+      return;
+    }
+
+    // migrate notes saved by older versions of this app
+    notes.forEach(n => {
+      if (n.html === undefined) n.html = n.text !== undefined ? escapeHtml(n.text) : '';
+      if (n.image === undefined) n.image = null;
+    });
+  }
+
+  function saveNotes() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+    } catch (e) { /* saving failed silently; app still works this session */ }
+  }
+
+  function processImageFile(file, note) {
+    if (!file.type || !file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > MAX_DIM || height > MAX_DIM) {
+          const ratio = Math.min(MAX_DIM / width, MAX_DIM / height);
+          width = Math.round(width * ratio);
+          height = Math.round(height * ratio);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        let dataUrl;
+        try {
+          dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+        } catch (e) {
+          dataUrl = reader.result;
+        }
+        note.image = dataUrl;
+        saveNotes();
+        render();
+      };
+      img.onerror = () => { /* not a readable image, ignore */ };
+      img.src = reader.result;
+    };
+    reader.onerror = () => { /* could not read file, ignore */ };
+    reader.readAsDataURL(file);
+  }
+
+  function render() {
+    const board = document.getElementById('board');
+    const strip = document.getElementById('strip');
+    board.innerHTML = '';
+    strip.innerHTML = '';
+
+    const expanded = notes.filter(n => !n.collapsed);
+    const collapsed = notes.filter(n => n.collapsed);
+
+    if (notes.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.textContent = '目前沒有便利貼，按上面「新增便利貼」開始吧。';
+      board.appendChild(empty);
+    }
+
+    expanded.forEach(note => board.appendChild(buildNote(note)));
+    collapsed.forEach(note => strip.appendChild(buildTab(note)));
+  }
+
+  function buildNote(note) {
+    const el = document.createElement('div');
+    el.className = 'note';
+    el.style.background = `var(--${note.color})`;
+
+    const top = document.createElement('div');
+    top.className = 'note-top';
+
+    const topLeft = document.createElement('div');
+    topLeft.className = 'note-top-left';
+
+    const imageBtn = document.createElement('button');
+    imageBtn.className = 'icon-btn';
+    imageBtn.title = '從相簿加入圖片';
+    imageBtn.textContent = '🖼';
+    imageBtn.onclick = () => {
+      pendingImageTargetId = note.id;
+      document.getElementById('imageInput').click();
+    };
+
+    const collapseBtn = document.createElement('button');
+    collapseBtn.className = 'icon-btn';
+    collapseBtn.title = '收起到上方';
+    collapseBtn.textContent = '︿';
+    collapseBtn.onclick = () => {
+      note.collapsed = true;
+      saveNotes();
+      render();
+    };
+
+    topLeft.appendChild(imageBtn);
+    topLeft.appendChild(collapseBtn);
+
+    const delBtn = document.createElement('button');
+    delBtn.className = 'icon-btn';
+    delBtn.title = '刪除';
+    delBtn.textContent = '×';
+    delBtn.onclick = () => {
+      notes = notes.filter(n => n.id !== note.id);
+      saveNotes();
+      render();
+    };
+
+    top.appendChild(topLeft);
+    top.appendChild(delBtn);
+
+    let imageBox = null;
+    if (note.image) {
+      imageBox = document.createElement('div');
+      imageBox.className = 'note-image';
+      const img = document.createElement('img');
+      img.src = note.image;
+      const removeBtn = document.createElement('button');
+      removeBtn.className = 'remove-image';
+      removeBtn.title = '移除圖片';
+      removeBtn.textContent = '×';
+      removeBtn.onclick = () => {
+        note.image = null;
+        saveNotes();
+        render();
+      };
+      imageBox.appendChild(img);
+      imageBox.appendChild(removeBtn);
+    }
+
+    const editable = document.createElement('div');
+    editable.className = 'note-text';
+    editable.contentEditable = 'true';
+    editable.dataset.noteId = note.id;
+    editable.dataset.placeholder = '寫點什麼…（也可以直接貼上圖片）';
+    editable.style.fontSize = SIZES[note.size];
+    editable.innerHTML = note.html || '';
+    editable.addEventListener('input', () => {
+      if (editable.innerHTML === '<br>') editable.innerHTML = '';
+      note.html = editable.innerHTML;
+      saveNotes();
+    });
+    editable.addEventListener('paste', (e) => {
+      const items = e.clipboardData && e.clipboardData.items;
+      if (!items) return;
+      for (const item of items) {
+        if (item.type && item.type.startsWith('image/')) {
+          const file = item.getAsFile();
+          if (file) {
+            e.preventDefault();
+            processImageFile(file, note);
+          }
+          break;
+        }
+      }
+    });
+
+    const controls = document.createElement('div');
+    controls.className = 'note-controls';
+
+    const sizeSelect = document.createElement('select');
+    sizeSelect.className = 'size-select';
+    Object.keys(SIZES).forEach(key => {
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = key;
+      if (key === note.size) opt.selected = true;
+      sizeSelect.appendChild(opt);
+    });
+    sizeSelect.onchange = () => {
+      note.size = sizeSelect.value;
+      editable.style.fontSize = SIZES[note.size];
+      saveNotes();
+    };
+
+    const swatches = document.createElement('div');
+    swatches.className = 'swatches';
+    COLORS.forEach(c => {
+      const sw = document.createElement('button');
+      sw.className = 'swatch' + (c === note.color ? ' active' : '');
+      sw.style.background = `var(--${c})`;
+      sw.title = '換顏色';
+      sw.onclick = () => {
+        note.color = c;
+        saveNotes();
+        render();
+      };
+      swatches.appendChild(sw);
+    });
+
+    const caretPad = document.createElement('div');
+    caretPad.className = 'caret-joystick';
+    caretPad.title = '拖曳移動游標';
+    const caretKnob = document.createElement('div');
+    caretKnob.className = 'knob';
+    caretPad.appendChild(caretKnob);
+    attachCaretJoystick(caretPad, caretKnob, editable);
+
+    controls.appendChild(sizeSelect);
+    controls.appendChild(caretPad);
+    controls.appendChild(swatches);
+
+    el.appendChild(top);
+    if (imageBox) el.appendChild(imageBox);
+    el.appendChild(editable);
+    el.appendChild(controls);
+    return el;
+  }
+
+  function buildTab(note) {
+    const tab = document.createElement('div');
+    tab.className = 'tab';
+
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dot.style.background = `var(--${note.color})`;
+
+    const label = document.createElement('span');
+    label.className = 'label';
+    const text = plainTextOf(note.html).trim();
+    label.textContent = text ? text : '（空白便利貼）';
+
+    const expandBtn = document.createElement('button');
+    expandBtn.className = 'expand-x';
+    expandBtn.title = '展開';
+    expandBtn.textContent = '﹀';
+    expandBtn.onclick = () => {
+      note.collapsed = false;
+      saveNotes();
+      render();
+    };
+
+    tab.appendChild(dot);
+    tab.appendChild(label);
+    tab.appendChild(expandBtn);
+
+    tab.onclick = (e) => {
+      if (e.target !== expandBtn) {
+        note.collapsed = false;
+        saveNotes();
+        render();
+      }
+    };
+
+    return tab;
+  }
+
+  // --- virtual joystick for moving the text caret left/right ---
+  function attachCaretJoystick(padEl, knobEl, editable) {
+    let dragging = false;
+    let startX = 0;
+    let dir = 0;
+    let intervalId = null;
+
+    function moveCaret(direction) {
+      const sel = window.getSelection();
+      if (!sel) return;
+      if (!sel.anchorNode || !editable.contains(sel.anchorNode)) {
+        const range = document.createRange();
+        range.selectNodeContents(editable);
+        range.collapse(false);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+      try { sel.modify('move', direction, 'character'); } catch (e) { /* Selection.modify unsupported */ }
+    }
+
+    padEl.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      editable.focus();
+      dragging = true;
+      startX = e.clientX;
+      try { padEl.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+      intervalId = setInterval(() => {
+        if (dir !== 0) moveCaret(dir > 0 ? 'right' : 'left');
+      }, CARET_REPEAT_MS);
+    });
+
+    padEl.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      e.preventDefault();
+      let dx = e.clientX - startX;
+      dx = Math.max(-CARET_HALF, Math.min(CARET_HALF, dx));
+      knobEl.style.transform = `translateX(${dx}px)`;
+      dir = Math.abs(dx) > 5 ? dx : 0;
+    });
+
+    function stop() {
+      if (!dragging) return;
+      dragging = false;
+      dir = 0;
+      clearInterval(intervalId);
+      knobEl.style.transform = 'translateX(0)';
+    }
+    padEl.addEventListener('pointerup', stop);
+    padEl.addEventListener('pointercancel', stop);
+    padEl.addEventListener('pointerleave', () => { if (dragging) stop(); });
+  }
+
+  // --- selection formatting toolbar ---
+  const selectionToolbar = document.getElementById('selectionToolbar');
+  const boldBtn = document.getElementById('boldBtn');
+
+  function activeEditable() {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) return null;
+    const anchorNode = sel.anchorNode;
+    const node = anchorNode && (anchorNode.nodeType === 3 ? anchorNode.parentElement : anchorNode);
+    return node && node.closest ? node.closest('.note-text') : null;
+  }
+
+  function persistActiveEditable() {
+    const editableEl = activeEditable();
+    if (!editableEl) return;
+    const note = notes.find(n => n.id === editableEl.dataset.noteId);
+    if (note) {
+      note.html = editableEl.innerHTML;
+      saveNotes();
+    }
+  }
+
+  document.addEventListener('selectionchange', () => {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+      selectionToolbar.classList.remove('visible');
+      return;
+    }
+    if (!activeEditable()) {
+      selectionToolbar.classList.remove('visible');
+      return;
+    }
+    selectionToolbar.classList.add('visible');
+    try { boldBtn.classList.toggle('active', document.queryCommandState('bold')); } catch (e) { /* queryCommandState unsupported */ }
+  });
+
+  selectionToolbar.querySelectorAll('.tcolor').forEach(btn => {
+    btn.addEventListener('mousedown', e => e.preventDefault());
+    btn.addEventListener('click', () => {
+      document.execCommand('foreColor', false, btn.dataset.color);
+      persistActiveEditable();
+    });
+  });
+  boldBtn.addEventListener('mousedown', e => e.preventDefault());
+  boldBtn.addEventListener('click', () => {
+    document.execCommand('bold');
+    try { boldBtn.classList.toggle('active', document.queryCommandState('bold')); } catch (e) { /* ignore */ }
+    persistActiveEditable();
+  });
+  document.getElementById('resetBtn').addEventListener('mousedown', e => e.preventDefault());
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    document.execCommand('removeFormat');
+    persistActiveEditable();
+  });
+
+  // --- toolbar actions ---
+  document.getElementById('newBtn').onclick = () => {
+    const colorIdx = notes.length % COLORS.length;
+    notes.unshift({ id: id(), html: '', color: COLORS[colorIdx], size: 'M', collapsed: false, image: null });
+    saveNotes();
+    render();
+    const firstEditable = document.querySelector('.note .note-text');
+    if (firstEditable) firstEditable.focus();
+  };
+
+  document.getElementById('imageInput').onchange = (e) => {
+    const file = e.target.files && e.target.files[0];
+    const targetNote = notes.find(n => n.id === pendingImageTargetId);
+    if (file && targetNote) {
+      processImageFile(file, targetNote);
+    }
+    e.target.value = '';
+    pendingImageTargetId = null;
+  };
+
+  loadNotes();
+  render();
+})();
+</script>
+
+</body>
+</html>
